@@ -9,9 +9,7 @@
 @foreach($items as $item)
   <url>
     <loc>{{ $item['loc'] }}</loc>
-<?php
-
-if (!empty($item['translations'])) {
+<?php if (!empty($item['translations'])) {
   foreach ($item['translations'] as $translation) {
     echo "\t\t" . '<xhtml:link rel="alternate" hreflang="' . $translation['language'] . '" href="' . $translation['url'] . '" />' . "\n";
   }
